@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aashvik - Projects</title>
+
+    <link rel="stylesheet" href="projects.css">
+</head>
+
+<body>
+
+    <div class="cursor"></div>
+
+    <main class="page">
+
+        <a class="back" href="index.html">← Back</a>
+
+        <h1>Projects</h1>
+
+        <p class="subtitle">Things I've built.</p>
+
+        <div class="projects">
+
+            <div class="project">
+                <div class="project-content">
+
+                    <h2>Anukrama</h2>
+
+                    <p>
+                        A Bhagavad Gita verse practice website with
+                        ai chanting evaluation. (Made for stardance!)
+                        Also, I made the model myself.
+                    </p>
+
+                    <div class="tags">
+                        <span>JavaScript</span>
+                        <span>Python</span>
+                        <span>AI</span>
+                    </div>
+
+                    <div class="links">
+                        <a
+                            href="https://github.com/koditra/Anukrama"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub
+                        </a>
+
+                        <a
+                            href="https://koditra.github.io/Anukrama/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Live Site
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="project">
+                <div class="project-content">
+
+                    <h2>Gray Thief</h2>
+
+                    <p>
+                        A grayscale Godot game where you steal light
+                        and use it to interact with the world.
+                    </p>
+
+                    <div class="tags">
+                        <span>Godot</span>
+                        <span>GDScript</span>
+                        <span>Game Dev</span>
+                    </div>
+
+                    <div class="links">
+                        <a href="#">
+                            No links yet :(
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="project">
+                <div class="project-content">
+
+                    <h2>Hackropad</h2>
+
+                    <p>
+                        A custom three-key macropad built with a
+                        XIAO RP2040 and custom PCB. It helps u
+                        code in java! :D (Made for stardance)
+                    </p>
+
+                    <div class="tags">
+                        <span>PCB</span>
+                        <span>RP2040</span>
+                        <span>KMK</span>
+                    </div>
+
+                    <div class="links">
+                        <a
+                            href="https://github.com/koditra/hackropad"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="project">
+                <div class="project-content">
+
+                    <h2>Sudo Jago</h2>
+
+                    <p>
+                        A custom alarm device with a TFT display,
+                        buttons, speaker, and Wi-Fi connectivity.
+                        It forces u to wake up by making you fix
+                        bugs in java code. Also its a pun between
+                        root command sudo and the Hindi word jago,
+                        which means wake up! (Made for stardance)
+                    </p>
+
+                    <div class="tags">
+                        <span>ESP32</span>
+                        <span>Arduino</span>
+                        <span>PCB</span>
+                    </div>
+
+                    <div class="links">
+                        <a
+                            href="https://github.com/koditra/sudo-jago"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            GitHub
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script>
+        const cursor = document.querySelector(".cursor");
+
+        document.addEventListener("mousemove", (e) => {
+            cursor.style.left = e.clientX + "px";
+            cursor.style.top = e.clientY + "px";
+        });
+
+        const clickable = document.querySelectorAll("a");
+
+        clickable.forEach((element) => {
+
+            element.addEventListener("mouseenter", () => {
+                cursor.classList.remove("text");
+                cursor.classList.add("hover");
+            });
+
+            element.addEventListener("mouseleave", () => {
+                cursor.classList.remove("hover");
+            });
+
+        });
+
+        const textElements = document.querySelectorAll(
+            "h1, h2, p, .tags span"
+        );
+
+        textElements.forEach((element) => {
+
+            element.addEventListener("mouseenter", () => {
+                cursor.classList.remove("hover");
+                cursor.classList.add("text");
+            });
+
+            element.addEventListener("mouseleave", () => {
+                cursor.classList.remove("text");
+            });
+
+        });
+    </script>
+
+</body>
+</html>
