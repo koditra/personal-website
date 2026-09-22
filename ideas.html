@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aashvik - Ideas</title>
+
+    <link rel="icon" type="image/gif" href="assets/mii.gif">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            cursor: none;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+
+            background: #11141a;
+            color: #d9dce2;
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .page {
+            width: 900px;
+            max-width: 90%;
+
+            margin: 0 auto;
+
+            padding: 60px 0;
+        }
+
+        .back {
+            display: inline-block;
+
+            color: #aaa;
+
+            text-decoration: none;
+
+            margin-bottom: 35px;
+
+            transition: 0.2s;
+        }
+
+        .back:hover {
+            color: white;
+        }
+
+        h1 {
+            margin: 0 0 8px 0;
+
+            font-size: 42px;
+
+            color: #f0f1f3;
+        }
+
+        .subtitle {
+            color: #888;
+
+            font-size: 18px;
+
+            margin-bottom: 40px;
+        }
+
+        .ideas {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 20px;
+        }
+
+        .idea {
+            background: #15181e;
+
+            border: 1px solid #242830;
+
+            border-radius: 20px;
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .idea:hover {
+            transform: translateY(-4px);
+
+            border-color: #444b58;
+        }
+
+        .idea-content {
+            padding: 28px;
+        }
+
+        .idea h2 {
+            font-size: 25px;
+
+            color: #f0f1f3;
+
+            margin-bottom: 12px;
+        }
+
+        .idea p {
+            color: #aeb3bc;
+
+            line-height: 1.6;
+
+            margin-bottom: 20px;
+
+            max-width: 700px;
+        }
+
+        .tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+        .tags span {
+            background: #292e38;
+
+            color: #ccc;
+
+            padding: 6px 10px;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+        }
+
+        .cursor {
+            position: fixed;
+
+            left: 0;
+            top: 0;
+
+            width: 10px;
+            height: 10px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            mix-blend-mode: difference;
+
+            pointer-events: none;
+
+            transform: translate(-50%, -50%);
+
+            z-index: 9999;
+
+            transition:
+                width 0.2s ease,
+                height 0.2s ease,
+                border-radius 0.2s ease;
+        }
+
+        .cursor.hover {
+            width: 30px;
+            height: 30px;
+        }
+
+        .cursor.text {
+            width: 2px;
+            height: 20px;
+
+            border-radius: 0;
+
+            background: white;
+        }
+
+        @media (max-width: 700px) {
+            .page {
+                max-width: 92%;
+
+                padding: 35px 0;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+
+                margin-bottom: 30px;
+            }
+
+            .idea-content {
+                padding: 22px;
+            }
+
+            .idea h2 {
+                font-size: 23px;
+            }
+
+            .idea p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cursor"></div>
+
+    <div class="page">
+
+        <a class="back" href="index.html">← Back</a>
+
+        <h1><b>Ideas</b></h1>
+
+        <p class="subtitle">
+            Things I might build someday.
+        </p>
+
+        <div class="ideas">
+
+            <div class="idea">
+                <div class="idea-content">
+
+                    <h2>Desmos Game Engine</h2>
+
+                    <p>
+                        Make a tiny game framework entirely inside Desmos
+                        and see how far I can push it.
+                    </p>
+
+                    <div class="tags">
+                        <span>Desmos</span>
+                        <span>Games</span>
+                        <span>Math</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="idea">
+                <div class="idea-content">
+
+                    <h2>Pocket Cyberdeck</h2>
+
+                    <p>
+                        Build a tiny portable computer for experimenting
+                        with cybersecurity and random hardware projects.
+                    </p>
+
+                    <div class="tags">
+                        <span>Hardware</span>
+                        <span>Cybersecurity</span>
+                        <span>ESP32</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="idea">
+                <div class="idea-content">
+
+                    <h2>Something With AI</h2>
+
+                    <p>
+                        Build something where the AI actually does something
+                        useful instead of just being a chatbot.
+                    </p>
+
+                    <div class="tags">
+                        <span>AI</span>
+                        <span>Python</span>
+                        <span>Experiment</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="idea">
+                <div class="idea-content">
+
+                    <h2>???</h2>
+
+                    <p>
+                        Some completely random idea I haven't thought of yet.
+                    </p>
+
+                    <div class="tags">
+                        <span>Random</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        const cursor = document.querySelector(".cursor");
+
+        document.addEventListener("mousemove", (e) => {
+            cursor.style.left = e.clientX + "px";
+            cursor.style.top = e.clientY + "px";
+        });
+
+        const clickable = document.querySelectorAll("a");
+
+        clickable.forEach((element) => {
+
+            element.addEventListener("mouseenter", () => {
+                cursor.classList.remove("text");
+                cursor.classList.add("hover");
+            });
+
+            element.addEventListener("mouseleave", () => {
+                cursor.classList.remove("hover");
+            });
+
+        });
+
+        const textElements = document.querySelectorAll(
+            "h1, h2, p, .tags span"
+        );
+
+        textElements.forEach((element) => {
+
+            element.addEventListener("mouseenter", () => {
+                cursor.classList.remove("hover");
+                cursor.classList.add("text");
+            });
+
+            element.addEventListener("mouseleave", () => {
+                cursor.classList.remove("text");
+            });
+
+        });
+    </script>
+
+</body>
+</html>
