@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aashvik</title>
+
+    <link rel="icon" type="image/gif" href="assets/mii.gif">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            cursor: none;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            background: #11141a;
+            color: #d9dce2;
+
+            font-family: Arial, sans-serif;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        body::before {
+            content: "";
+
+            position: fixed;
+            inset: 0;
+
+            background-image: url("assets/background.jpg");
+            background-size: cover;
+            background-position: center;
+
+            opacity: 0.2;
+            filter: grayscale(100%);
+
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+
+            position: fixed;
+            inset: 0;
+
+            background: #11141a;
+            opacity: 0.7;
+
+            z-index: -1;
+        }
+
+        .page {
+            width: 900px;
+            max-width: 90%;
+
+            padding: 40px 0;
+        }
+
+        .local-time {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 12px;
+
+            width: fit-content;
+
+            margin: 0 auto 20px auto;
+
+            padding: 14px 24px;
+
+            background: #15181e;
+            border: 1px solid #242830;
+            border-radius: 20px;
+
+            font-size: 20px;
+            letter-spacing: 1.5px;
+
+            color: #aeb3bc;
+        }
+
+        .time-label {
+            color: #d9dce2;
+
+            font-size: 20px;
+            font-weight: 600;
+
+            letter-spacing: 2px;
+        }
+
+        #san-jose-clock {
+            color: #d9dce2;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 55px;
+
+            padding: 45px;
+
+            background: #15181e;
+            border: 1px solid #242830;
+            border-radius: 20px;
+        }
+
+        .photo {
+            width: 220px;
+            height: 330px;
+
+            flex-shrink: 0;
+
+            border-radius: 20px;
+
+            object-fit: contain;
+
+            background: #20242b;
+        }
+
+        .content {
+            width: 500px;
+        }
+
+        h1 {
+            margin: 0 0 25px 0;
+
+            font-size: 36px;
+
+            color: #f0f1f3;
+        }
+
+        .line {
+            display: flex;
+
+            gap: 16px;
+
+            margin: 18px 0;
+
+            font-size: 17px;
+            line-height: 1.5;
+
+            color: #aeb3bc;
+        }
+
+        .icon {
+            width: 22px;
+
+            flex-shrink: 0;
+
+            color: #777e89;
+
+            font-size: 18px;
+        }
+
+        a {
+            color: #45a2fa;
+
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .cursor {
+            position: fixed;
+
+            left: 0;
+            top: 0;
+
+            width: 10px;
+            height: 10px;
+
+            border-radius: 50%;
+
+            background: white;
+
+            mix-blend-mode: difference;
+
+            pointer-events: none;
+
+            transform: translate(-50%, -50%);
+
+            z-index: 9999;
+
+            transition:
+                width 0.2s ease,
+                height 0.2s ease,
+                border-radius 0.2s ease;
+        }
+
+        .cursor.hover {
+            width: 30px;
+            height: 30px;
+        }
+
+        .cursor.text {
+            width: 2px;
+            height: 20px;
+
+            border-radius: 0;
+
+            background: white;
+        }
+
+        @media (max-width: 800px) {
+            .page {
+                max-width: 92%;
+            }
+
+            .profile {
+                flex-direction: column;
+
+                gap: 30px;
+
+                padding: 35px 25px;
+            }
+
+            .content {
+                width: 100%;
+            }
+
+            .photo {
+                width: 150px;
+                height: 225px;
+            }
+
+            .photo img {
+                width: 180%;
+                height: 180%;
+                object-fit: contain;
+                transform: translate(-16%, -16%);
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .line {
+                font-size: 16px;
+            }
+
+            .local-time {
+                margin-bottom: 20px;
+
+                font-size: 18px;
+            }
+
+            .time-label {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cursor"></div>
+
+    <div class="page">
+
+        <div class="local-time">
+            <span class="time-label">SAN JOSE</span>
+            <span id="san-jose-clock">--:--:--</span>
+        </div>
+
+        <div class="profile">
+
+            <img
+                class="photo"
+                src="assets/mii.gif"
+                alt="Aashvik's Mii"
+            >
+
+            <div class="content">
+
+                <h1><b>Aashvik</b></h1>
+
+                <div class="line">
+                    <span class="icon">⚑</span>
+                    <span>
+                        Based in San Jose, California.
+                    </span>
+                </div>
+
+                <div class="line">
+                    <span class="icon">⌘</span>
+                    <span>
+                        High school student and developer interested in
+                        software, electronics, cybersecurity and making things.
+                    </span>
+                </div>
+
+                <div class="line">
+                    <span class="icon">›_</span>
+                    <span>
+                        I build random projects with Python, JavaScript,
+                        Java, Arduino, ESP32, Godot and more.
+                    </span>
+                </div>
+
+                <div class="line">
+                    <span class="icon">⌁</span>
+                    <span>
+                        I'm part of Hack Club and spend a lot of time
+                        building projects, hardware and experimenting with ideas.
+                    </span>
+                </div>
+
+                <div class="line">
+                    <span class="icon">↗</span>
+                    <span>
+                        Check out my
+                        <a href="projects.html"><b>projects</b></a>
+                        and
+                        <a
+                            href="https://github.com/koditra"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <b>GitHub</b>
+                        </a>.
+                    </span>
+                </div>
+
+                <div class="line">
+                    <span class="icon">⌁</span>
+                    <span>
+                        Currently working on projects involving
+                        AI, electronics, games and software.
+                    </span>
+                </div>
+
+                <div class="line">
+                    <span class="icon">@</span>
+                    <span>
+                        Reachable via
+                        <a href="mailto:YOUR_EMAIL_HERE">
+                            <b>email</b>
+                        </a>
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        const cursor = document.querySelector(".cursor");
+
+        document.addEventListener("mousemove", (e) => {
+            cursor.style.left = e.clientX + "px";
+            cursor.style.top = e.clientY + "px";
+        });
+
+        const clickable = document.querySelectorAll("a");
+
+        clickable.forEach((element) => {
+
+            element.addEventListener("mouseenter", () => {
+                cursor.classList.remove("text");
+                cursor.classList.add("hover");
+            });
+
+            element.addEventListener("mouseleave", () => {
+                cursor.classList.remove("hover");
+            });
+
+        });
+
+        const textElements = document.querySelectorAll(
+            "h1, .line span:not(.icon)"
+        );
+
+        textElements.forEach((element) => {
+
+            element.addEventListener("mouseenter", () => {
+                cursor.classList.remove("hover");
+                cursor.classList.add("text");
+            });
+
+            element.addEventListener("mouseleave", () => {
+                cursor.classList.remove("text");
+            });
+
+        });
+
+        function updateSanJoseTime() {
+            const now = new Date();
+
+            const sanJoseTime = new Intl.DateTimeFormat("en-US", {
+                timeZone: "America/Los_Angeles",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                hour12: true
+            }).format(now);
+
+            document.getElementById("san-jose-clock").textContent = sanJoseTime;
+        }
+
+        updateSanJoseTime();
+
+        setInterval(updateSanJoseTime, 1000);
+    </script>
+
+</body>
+</html>
